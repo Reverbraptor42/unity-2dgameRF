@@ -1,17 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets._2D;
 
 public class Collectable : MonoBehaviour
 {
+    private bool _hasBeenCollected = false;
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		HandleCollected();
+        if (!_hasBeenCollected && collision.gameObject.GetComponent<PlatformerCharacter2D>())
+        {
+            HandleCollected();
+        }
+        
 	}
 
 	void HandleCollected()
 	{
-		print("I've been collected");
-		Destroy(gameObject);
+        _hasBeenCollected = true;
+        CollectibleManager.Instance.HandleCollected();
+        Destroy(gameObject);
 	}
 }
