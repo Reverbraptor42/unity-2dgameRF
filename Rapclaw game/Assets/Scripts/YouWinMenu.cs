@@ -8,10 +8,11 @@ public class YouWinMenu : MonoBehaviour
     public static YouWinMenu Instance;
     public GameObject container;
     public Button nextLevelButton;
+    public Button hideButton;
 
     private void OnEnable()
     {
-        nextLevelButton.onClick.AddListener(HandleNextLevelPressed); 
+        nextLevelButton.onClick.AddListener(HandleNextLevelPressed);
     }
 
     private void OnDisable()
@@ -34,4 +35,5 @@ public class YouWinMenu : MonoBehaviour
     {
         container.SetActive(true);
     }
+    
 }
