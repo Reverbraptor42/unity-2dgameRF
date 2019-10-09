@@ -36,5 +36,7 @@ public class CollectibleManager : MonoBehaviour
         {
             YouWinMenu.Instance.Show();
         }
+
+        SoundManager.Instance.PlayClawCollect();
     }
 }
