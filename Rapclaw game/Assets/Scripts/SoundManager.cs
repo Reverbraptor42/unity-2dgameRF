@@ -8,12 +8,15 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource audioSource;
 
+    public AudioSource deathSource;
+
     public AudioSource completeSource;
 
     public AudioClip clawCollectSound;
 
     public AudioClip allClawsCollected;
 
+    public AudioClip hitSound;
     private void Awake()
     {
         if (Instance == null)
@@ -38,5 +41,11 @@ public class SoundManager : MonoBehaviour
     {
         completeSource.clip = allClawsCollected;
         completeSource.Play();
+    }
+
+    public void PlayHitSound()
+    {
+        deathSource.clip = hitSound;
+        deathSource.Play();
     }
 }    
