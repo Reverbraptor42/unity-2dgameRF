@@ -35,6 +35,9 @@ public class CollectibleManager : MonoBehaviour
         if(_clawsCollected == _totalClaws)
         {
             YouWinMenu.Instance.Show();
+            SoundManager.Instance.PlayClawsCollected();
         }
+
+        SoundManager.Instance.PlayClawCollect();
     }
 }

@@ -15,7 +15,7 @@ public class Collectable : MonoBehaviour
         
 	}
 
-	void HandleCollected()
+	public virtual void HandleCollected()
 	{
         _hasBeenCollected = true;
         CollectibleManager.Instance.HandleCollected();

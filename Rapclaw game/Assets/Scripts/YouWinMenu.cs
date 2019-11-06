@@ -34,6 +34,7 @@ public class YouWinMenu : MonoBehaviour
     public void Show()
     {
         container.SetActive(true);
+        SoundManager.Instance.PlayClawsCollected();
     }
     
 }
